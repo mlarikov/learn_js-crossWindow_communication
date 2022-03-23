@@ -11,13 +11,13 @@
     <iframe src="https://example.com" id="iframe"></iframe>
     <script>
         iframe.onload = function () {
-            //we can get reference to the inner window
-            let iframeWindow = iframe.contentWindow;
+            // we can get the reference to the inner window
+            let iframeWindow = iframe.contentWindow; // OK
             try {
-                // ..but not to the document iside it
-                let doc = iframe.contentDocument;
+                // ...but not to the document inside it
+                let doc = iframe.contentDocument; // ERROR
             } catch (e) {
-                alert(e) // Security Error (another origin)
+                alert(e); // Security Error (another origin)
             }
 
         }
