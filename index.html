@@ -20,6 +20,13 @@
                 alert(e); // Security Error (another origin)
             }
 
+            // also we can't READ the URL of the page in iframe
+            try {
+                // Can't read URL from the Location object
+                let href = iframe.contentWindow.location.href; // ERROR
+            } catch (e) {
+                alert(e); // Security Error
+            }
         }
     </script>
 </body>
