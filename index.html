@@ -16,6 +16,7 @@
             try {
                 // ...but not to the document inside it
                 let doc = iframe.contentDocument; // ERROR
+                alert(doc);
             } catch (e) {
                 alert(e); // Security Error (another origin)
             }
