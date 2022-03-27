@@ -30,7 +30,7 @@
             }
 
             // ..we can WRITE into location (and thus load somthing else into the frame)
-            iframe.contentWindow.location = 'index.html'; //OK
+            iframe.contentWindow.location = '/'; //OK
 
             iframe.onload = null; //clear the handler, not to run it after the location change
         }
