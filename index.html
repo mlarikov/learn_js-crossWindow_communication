@@ -28,6 +28,11 @@
             } catch (e) {
                 alert(e); // Security Error
             }
+
+            // ..we can WRITE into location (and thus load somthing else into the frame)
+            iframe.contentWindow.location = '/'; //OK
+
+            iframe.onload = null; //clear the handler, not to run it after the location change
         }
     </script>
 </body>
