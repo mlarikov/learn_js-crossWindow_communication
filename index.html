@@ -11,6 +11,17 @@
         // alert(iframe.contentWindow == frames[0]); //true
         // alert(iframe.contentWindow == frames.win); //true
         console.log(window.frames[0].parent === window);
+        console.log(checkTopWin);
+    </script>
+
+    <script>
+        function checkTopWin() { // current window == window.top
+            if (window == top) {
+                return 'The script is in the topmost window, not in a frame')\;
+            } else {
+                return 'The script runs in a frame!';
+            }
+        }
     </script>
 </body>
 </html>
