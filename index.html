@@ -6,6 +6,10 @@
     <title>Cross-window communication</title>
 </head>
 <body>
-    
+    <iframe src="/" style="height:80px" name="win" id="iframe" frameborder="0"></iframe>
+    <script>
+        alert(iframe.contentWindow == frames[0]); //true
+        alert(iframe.contentWindow == frames.win); //true
+    </script>
 </body>
 </html>
