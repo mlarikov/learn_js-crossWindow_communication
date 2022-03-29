@@ -8,8 +8,9 @@
 <body>
     <iframe src="/" style="height:80px" name="win" id="iframe" frameborder="0"></iframe>
     <script>
-        alert(iframe.contentWindow == frames[0]); //true
-        alert(iframe.contentWindow == frames.win); //true
+        // alert(iframe.contentWindow == frames[0]); //true
+        // alert(iframe.contentWindow == frames.win); //true
+        console.log(window.frames[0].parent === window);
     </script>
 </body>
 </html>
