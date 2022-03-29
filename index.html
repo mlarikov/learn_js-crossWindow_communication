@@ -1,20 +1,27 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cross-window communication</title>
 </head>
+
 <body>
     <iframe src="/" id="iframe" frameborder="0"></iframe>
 
     <script>
         let oldDoc = iframe.contentDocument;
-        iframe.onload = function() {
-            let newDoc = iframe.contentDocument;
-            // the loaded document is not the same as initial!
-            alert (oldDoc == newDoc) //false
+        iframe.onload = function () {
+            // every 100ms check if the document is the new one
+            let timer = setInterval(() => {
+                let newDoc = iframe.contentDocument;
+                if (newDoc == oldDoc) return;
+                alert('New document is here!')
+                clearInterval(timer);// cancel setInterval, don`t need it any more
+            }, 100);
         };
     </script>
 </body>
+
 </html>
