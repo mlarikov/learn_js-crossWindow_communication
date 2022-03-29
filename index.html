@@ -35,6 +35,14 @@
             iframe.onload = null; //clear the handler, not to run it after the location change
         }
     </script>
+
+    <iframe src="/" frameborder="0" id="sameOriginIframe"></iframe>
+    <script>
+        iframe.onload = function() {
+            //just do anything
+            sameOriginIframe.contentDocument.body.prepend("Hello World!");
+        }
+    </script>
 </body>
 
 </html>
