@@ -8,12 +8,14 @@
 </head>
 
 <body>
-    <iframe src="http://example.com" name="example" frameborder="0"></iframe>
-    <script>
-        let win = window.frames.example;
+    <iframe src="http://example.com" name="example" frameborder="0">
 
-        win.postMessage("message", "http://example.com");
-    </script>
+        <script>
+            let win = window.frames.example;
+
+            win.postMessage("message", "http://example.com");
+        </script>
+    </iframe>
 </body>
 
 </html>
