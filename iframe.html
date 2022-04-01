@@ -1,9 +1,19 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-    </head>
-    <body>
-        
-    </body>
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+
+    Receiving iframe
+    <script>
+        window.addEventListener('message', function() {
+            alert(`Receiving ${event.data} from ${event.origin}`);
+        });
+    </script>
+
+</body>
+
 </html>
