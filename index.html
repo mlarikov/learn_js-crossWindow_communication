@@ -8,13 +8,12 @@
 </head>
 
 <body>
-    <iframe src="http://example.com" name="example">
+    <iframe src="http://example.com" name="example" frameborder="0"></iframe>
+    <script>
+        let win = window.frames.example;
 
-        <script>
-            let win = window.frames.example;
-
-            win.postMessage("message", "http://example.com");
-        </script>
+        win.postMessage("message", "http://example.com");
+    </script>
 </body>
 
 </html>
